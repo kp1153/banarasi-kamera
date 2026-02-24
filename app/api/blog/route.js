@@ -1,5 +1,6 @@
 import db, { initDB } from "@/lib/db";
 import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export async function GET() {
   try {
@@ -19,12 +20,12 @@ export async function GET() {
 export async function POST(req) {
   try {
     await initDB();
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     if (!session) return Response.json({ error: "अनधिकृत" }, { status: 401 });
-    const { title, content, video_url, pdf_url } = await req.json();
+    const { title, content, video_url, pdf_url, cover_image, gallery } = await req.json();
     await db.execute({
-      sql: "INSERT INTO blog_posts (title, content, video_url, pdf_url, author_id) VALUES (?, ?, ?, ?, ?)",
-      args: [title, content, video_url || null, pdf_url || null, session.user.id],
+      sql: "INSERT INTO blog_posts (title, content, video_url, pdf_url, cover_image, gallery, author_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      args: [title, content, video_url || null, pdf_url || null, cover_image || null, gallery || null, session.user.id],
     });
     return Response.json({ success: true });
   } catch (err) {
