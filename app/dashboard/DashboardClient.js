@@ -23,6 +23,9 @@ export default function DashboardClient({ total, blocks, addictions, migrants, r
           <p className="text-3xl">👥</p>
           <p className="text-sm text-gray-600">सभी श्रमिक</p>
         </Link>
+        <Link href="/dashboard/comments" className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700">
+         टिप्पणी मॉडरेशन
+         </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
