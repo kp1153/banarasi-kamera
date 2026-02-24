@@ -11,7 +11,7 @@ export default function BlogClient({ posts }) {
           <div key={post.id} className="bg-white rounded-lg shadow overflow-hidden">
             {post.cover_image && (
               <img src={post.cover_image} alt={post.title}
-                className="w-full h-48 object-cover" />
+                className="w-full h-48 object-top" />
             )}
             <div className="p-6">
               <h2 className="text-xl font-bold text-gray-800 mb-2">{post.title}</h2>
