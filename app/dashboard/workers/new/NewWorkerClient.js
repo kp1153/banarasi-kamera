@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CldUploadWidget } from "next-cloudinary";
 
-const SKILLS = const SKILLS = ["राजमिस्त्री", "खेत मजदूर", "निर्माण मजदूर"];
+const SKILLS = ["राजमिस्त्री", "खेत मजदूर", "निर्माण मजदूर"];
 
 const ADDICTIONS = ["शराब", "तंबाकू", "गुटखा", "बीड़ी", "ड्रग"];
 
