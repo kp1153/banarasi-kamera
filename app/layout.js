@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "बनारसी कमेरा — सीपीआई वाराणसी",
   description: "भारतीय कम्युनिस्ट पार्टी, वाराणसी — श्रमिक पोर्टल",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
